@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Drofsnar
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
@@ -43,7 +43,7 @@ namespace Drofsnar
                 {"EveningGrosbeak", 1000 },
                 {"GreaterPrairieChicken", 2000 },
                 {"IcelandGull", 3000 },
-                {"Orange-belliedParrot", 50000 },
+                {"Orange-belliedParrot", 5000 },
                 {"InvincibleBirdHunter", 0 },
                 {"VulnerableBirdHunter", 0 }
             };
@@ -60,6 +60,7 @@ namespace Drofsnar
                     {
                         //Invincible Bird Hunter Encountered: Lose a life, no points Assigned
                         currentLives--;
+                        vulnerableBirdHunterPoints = 200;
                         Console.BackgroundColor = ConsoleColor.Red;
                         Console.ForegroundColor = ConsoleColor.Black;
                         Console.WriteLine("Encounter: " + step + " ------- Current score " + scoreKeeper + "---------- Curent Lives " + currentLives);
@@ -90,6 +91,7 @@ namespace Drofsnar
                     {
                         bonusLife = true;
                         currentLives++;
+                        Console.WriteLine("BONUS LIFE!");
                     }
 
                 }
