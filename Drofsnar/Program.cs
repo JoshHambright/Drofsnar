@@ -51,7 +51,7 @@ namespace Drofsnar
             int currentLives = 3;
             int vulnerableBirdHunterPoints = 200;
             bool bonusLife = false;
-            Console.WriteLine(scoreKeeper);
+            Console.WriteLine("Starting Score: " + scoreKeeper + "           Starting Lives: " + currentLives);
             foreach (string step in steps)
             {
                 if (currentLives > 0)
@@ -84,14 +84,17 @@ namespace Drofsnar
 
                         // Basic Scoring based on points and birds
                         scoreKeeper = scoreKeeper + points[step];
-                        Console.WriteLine("Encounter: " + step + "--" + points[step] + " pts  ------------ Current score " + scoreKeeper + "---------- Curent Lives " + currentLives);
+                        Console.WriteLine("Encounter: " + step + " -- " + points[step] + " pts  ------------ Current score " + scoreKeeper + "---------- Curent Lives " + currentLives);
                     }
 
                     if (bonusLife == false && scoreKeeper >= 10000)
                     {
                         bonusLife = true;
                         currentLives++;
-                        Console.WriteLine("BONUS LIFE!");
+                        Console.BackgroundColor = ConsoleColor.Yellow;
+                        Console.ForegroundColor = ConsoleColor.Blue;
+                        Console.WriteLine("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-~~~~~~BONUS LIFE!~~~~~~=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
+                        Console.ResetColor();
                     }
 
                 }
